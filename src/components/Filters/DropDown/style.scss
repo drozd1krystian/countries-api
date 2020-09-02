@@ -1,0 +1,58 @@
+.dropdown {
+  max-width: 250px;
+  width: 100%;
+  padding: 20px 30px;
+  text-align: left;
+  box-shadow: 0 0px 4px 0 lighten(#000, 90%);
+  position: relative;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #fff;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__icon {
+    background: url("../../../assets/arrow-down.svg") no-repeat center
+      center/cover;
+    height: 15px;
+    width: 15px;
+    display: inline-block;
+    position: relative;
+  }
+  &__list {
+    background: #fff;
+    border-radius: 10px;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    position: absolute;
+    left: 0;
+    top: 68px;
+    padding: 10px 15px;
+    box-shadow: 0 0px 4px 0 lighten(#000, 90%);
+
+    .list__item {
+      padding: 10px 0;
+      transition: all 0.3s ease;
+      &:hover {
+        color: #00bfff;
+      }
+      &--active {
+        color: #00bfff;
+      }
+    }
+  }
+
+  &__list--open {
+    visibility: visible;
+    opacity: 1;
+  }
+}

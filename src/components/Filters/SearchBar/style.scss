@@ -1,0 +1,26 @@
+.search__wrapper {
+  position: relative;
+  display: flex;
+  padding: 20px 0;
+  align-items: center;
+
+  .input {
+    height: 100%;
+    padding: 20px 80px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0px 4px 0 lighten(#000, 90%);
+    transition: all 0.3s ease;
+    outline-color: #00bfff;
+  }
+
+  .search__icon {
+    background: url("../../../assets/search-line.svg") no-repeat center
+      center/cover;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+    position: absolute;
+    left: 30px;
+  }
+}

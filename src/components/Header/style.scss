@@ -1,0 +1,23 @@
+.header {
+  padding: 30px;
+  box-shadow: 0 2px 2px 0px lighten(#000, 90%);
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .theme__switch {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      .icon {
+        background: url("../../assets/moon-line.svg") center center/cover
+          no-repeat;
+        height: 20px;
+        width: 20px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
