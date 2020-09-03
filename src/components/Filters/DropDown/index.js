@@ -2,8 +2,17 @@ import React, { useState } from "react";
 import "./style.scss";
 import useDetectOutsideClick from "../../../hooks/useOutsideClick";
 import { useRef } from "react";
+import { ReactComponent as ArrowDown } from "../../../assets/arrow-down.svg";
 
-const regions = ["Africa", "Americas", "Asia", "Europe", "Oceania", "Polar"];
+const regions = [
+  "All",
+  "Africa",
+  "Americas",
+  "Asia",
+  "Europe",
+  "Oceania",
+  "Polar",
+];
 
 const DropDown = (props) => {
   const [isOpen, setIsOpen] = useState();
@@ -21,7 +30,7 @@ const DropDown = (props) => {
     >
       <div className="dropdown__wrapper">
         <span className="dropdown__title">{active}</span>
-        <span className="dropdown__icon" />
+        <ArrowDown className="dropdown__icon" />
       </div>
 
       <ul

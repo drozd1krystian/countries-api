@@ -1,11 +1,12 @@
 import React from "react";
 import "./style.scss";
+import { ReactComponent as SearchIcon } from "../../../assets/search-line.svg";
 
 const SearchBar = ({ handleChange, ...otherProps }) => {
   return (
     <div className="search">
       <div className="search__wrapper">
-        <span className="search__icon" />
+        <SearchIcon className="search__icon" />
         <input
           type="text"
           {...otherProps}

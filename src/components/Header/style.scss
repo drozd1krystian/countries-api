@@ -1,6 +1,13 @@
 .header {
   padding: 30px;
-  box-shadow: 0 2px 2px 0px lighten(#000, 90%);
+  box-shadow: 0 2px 2px 0px var(--shadow);
+  color: var(--text);
+  background: var(--secondary-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 200;
   .wrapper {
     display: flex;
     justify-content: space-between;
@@ -17,6 +24,7 @@
         height: 20px;
         width: 20px;
         margin-right: 10px;
+        fill: var(--text);
       }
     }
   }

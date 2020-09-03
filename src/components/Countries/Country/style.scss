@@ -1,0 +1,38 @@
+.country__wrapper {
+  width: 25%;
+  padding: 20px;
+  margin-bottom: 30px;
+
+  .country {
+    width: 100%;
+    box-shadow: 0 2px 4px 0px var(--shadow);
+    border-radius: 5px;
+
+    &__flag {
+      width: 100%;
+      height: 200px;
+      background: center center/cover no-repeat;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+
+    &__desc {
+      padding: 20px 20px 40px 20px;
+      background: var(--secondary-color);
+      color: var(--text);
+      border-radius: 10px;
+      font-size: 0.9rem;
+
+      .country__name {
+        padding: 10px 0;
+        font-size: 1.2rem;
+      }
+      &--field {
+        padding: 5px 0;
+      }
+      &--title {
+        font-weight: bold;
+      }
+    }
+  }
+}

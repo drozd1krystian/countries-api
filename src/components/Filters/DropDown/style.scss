@@ -3,11 +3,13 @@
   width: 100%;
   padding: 20px 30px;
   text-align: left;
-  box-shadow: 0 0px 4px 0 lighten(#000, 90%);
+  box-shadow: 0 0px 4px 0 var(--shadow);
   position: relative;
   border-radius: 10px;
   cursor: pointer;
-  background: #fff;
+  background: var(--secondary-color);
+  color: var(--text);
+  transition: all 0.3s ease;
 
   &__wrapper {
     position: relative;
@@ -19,15 +21,15 @@
   }
 
   &__icon {
-    background: url("../../../assets/arrow-down.svg") no-repeat center
-      center/cover;
     height: 15px;
     width: 15px;
     display: inline-block;
     position: relative;
+    fill: var(--text);
   }
   &__list {
-    background: #fff;
+    background: var(--secondary-color);
+    color: var(--text);
     border-radius: 10px;
     width: 100%;
     opacity: 0;
@@ -37,7 +39,7 @@
     left: 0;
     top: 68px;
     padding: 10px 15px;
-    box-shadow: 0 0px 4px 0 lighten(#000, 90%);
+    box-shadow: 0 0px 4px 0 var(--shadow);
 
     .list__item {
       padding: 10px 0;
