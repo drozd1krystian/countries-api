@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap");
 
 .light__theme {
   --primary-color: #fafafa;
@@ -23,7 +23,7 @@
   list-style: none;
   color: inherit;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Comforta", sans-serif;
 }
 
 .main {
@@ -33,4 +33,5 @@
 
 .container {
   max-width: 1450px;
+  margin: 0 auto;
 }

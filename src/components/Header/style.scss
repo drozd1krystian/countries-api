@@ -1,5 +1,4 @@
 .header {
-  padding: 30px;
   box-shadow: 0 2px 2px 0px var(--shadow);
   color: var(--text);
   background: var(--secondary-color);
@@ -12,6 +11,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 30px 20px;
 
     .theme__switch {
       display: flex;

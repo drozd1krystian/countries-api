@@ -3,6 +3,8 @@ import "./style.scss";
 import useDetectOutsideClick from "../../../hooks/useOutsideClick";
 import { useRef } from "react";
 import { ReactComponent as ArrowDown } from "../../../assets/arrow-down.svg";
+import { useDispatch } from "react-redux";
+import { setRegion } from "../../../redux/Countries/countries.actions";
 
 const regions = [
   "All",
@@ -19,8 +21,14 @@ const DropDown = (props) => {
   const [active, setActive] = useState("Filter by region");
   const optionsRef = useRef(null);
   const selectRef = useRef(null);
+  const dispatch = useDispatch();
 
   useDetectOutsideClick(optionsRef, setIsOpen, selectRef);
+
+  const handleSelected = (el) => {
+    setActive(el);
+    dispatch(setRegion(el));
+  };
 
   return (
     <div
@@ -45,7 +53,7 @@ const DropDown = (props) => {
               active === el ? "list__item list__item--active" : "list__item"
             }
             key={id}
-            onClick={() => setActive(el)}
+            onClick={() => handleSelected(el)}
           >
             {el}
           </li>

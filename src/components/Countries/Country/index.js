@@ -17,7 +17,7 @@ const Country = ({ country }) => {
           </p>
           <p className="country__desc--field">
             <span className="country__desc--title">Region: </span>
-            {country.population}
+            {country.region}
           </p>
           <p className="country__desc--field">
             <span className="country__desc--title">Capital: </span>

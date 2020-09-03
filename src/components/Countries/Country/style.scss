@@ -1,12 +1,13 @@
 .country__wrapper {
-  width: 25%;
-  padding: 20px;
-  margin-bottom: 30px;
+  width: 100%;
 
   .country {
     width: 100%;
-    box-shadow: 0 2px 4px 0px var(--shadow);
+    height: 100%;
+    box-shadow: 0 2px 6px 0px var(--shadow);
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
 
     &__flag {
       width: 100%;
@@ -22,10 +23,11 @@
       color: var(--text);
       border-radius: 10px;
       font-size: 0.9rem;
+      flex-grow: 1;
 
       .country__name {
         padding: 10px 0;
-        font-size: 1.2rem;
+        font-size: 20px;
       }
       &--field {
         padding: 5px 0;

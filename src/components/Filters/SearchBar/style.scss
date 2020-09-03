@@ -13,6 +13,7 @@
     box-shadow: 0 0px 4px 0 var(--shadow);
     transition: all 0.3s ease;
     outline-color: #00bfff;
+    color: var(--text);
 
     &::placeholder {
       color: var(--text);

@@ -9,9 +9,10 @@ const SearchBar = ({ handleChange, ...otherProps }) => {
         <SearchIcon className="search__icon" />
         <input
           type="text"
-          {...otherProps}
+          onInput={handleChange}
           className="input"
           placeholder="Search for a country..."
+          {...otherProps}
         />
       </div>
     </div>
