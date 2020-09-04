@@ -1,0 +1,17 @@
+.btn--back {
+  padding: 10px 20px;
+  background: var(--secondary-color);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  max-width: 120px;
+  box-shadow: 0 2px 4px 1px var(--shadow);
+  border-radius: 5px;
+  .field {
+    margin-left: 5px;
+  }
+}
+
+.btn__wrapper {
+  margin-top: 50px;
+}

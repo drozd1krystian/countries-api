@@ -7,7 +7,6 @@ import { ReactComponent as MoonIcon } from "../../assets/moon-line.svg";
 
 const Header = (props) => {
   const [theme, setTheme] = useState("light__theme");
-
   const changeTheme = () => {
     theme === "light__theme"
       ? setTheme("dark__theme")
@@ -28,7 +27,7 @@ const Header = (props) => {
         <div className="theme__switch" onClick={changeTheme}>
           <MoonIcon className="icon" />
           <span className="theme__type">
-            {theme === "light__theme" ? "Ligh" : "Dark"} Mode
+            {theme === "light__theme" ? "Light" : "Dark"} Mode
           </span>
         </div>
       </div>
