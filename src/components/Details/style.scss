@@ -62,3 +62,29 @@
     }
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .details {
+    flex-wrap: wrap;
+
+    .inner__wrapper {
+      flex-direction: column;
+      .details__wrapper {
+        margin-top: 20px;
+      }
+    }
+
+    &__flag,
+    &__desc {
+      flex-basis: 100%;
+    }
+
+    &__desc {
+      padding: 20px 0;
+      .details__header {
+        font-size: 1.4rem;
+        margin: 10px 0 0;
+      }
+    }
+  }
+}

@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import Country from "./Country";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useState } from "react";
-import { useCallback } from "react";
 import SkeletonCard from "./Country/skeletonCard";
 
 const mapState = ({ countries }) => ({
@@ -17,7 +16,7 @@ const Countries = (props) => {
   const { countries, isLoading } = useSelector(mapState);
   const [items, setItems] = useState([]);
 
-  const getNext = useCallback(() => {
+  const getNext = () => {
     const start = items.length;
     const end = items.length + 16;
 
@@ -28,7 +27,7 @@ const Countries = (props) => {
         .map((el) => <Country country={el} key={el.name} />),
     ];
     setItems(slides);
-  }, [items, countries, setItems]);
+  };
 
   useEffect(() => {
     const generateSlides = () => {

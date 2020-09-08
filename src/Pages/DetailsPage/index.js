@@ -3,40 +3,29 @@ import "./style.scss";
 import { useParams, Link, useHistory } from "react-router-dom";
 import { ReactComponent as ArrowLeft } from "../../assets/arrow-left.svg";
 import Details from "../../components/Details";
+import { getCountryData } from "../../Utils/data";
+import { useSelector } from "react-redux";
+
+const mapState = ({ countries }) => ({
+  countries: countries.countries,
+});
 
 const DetailsPage = (props) => {
   const { name } = useParams("name");
   const [country, setCountry] = useState(null);
+  const { countries } = useSelector(mapState);
   const history = useHistory();
 
   useEffect(() => {
-    const getCountryData = async () => {
-      try {
-        await fetch(`https://restcountries.eu/rest/v2/name/${name}`)
-          .then((res) => res.json())
-          .then(async (result) => {
-            if (result.status === 404) history.push("/");
-            const borders = result[0].borders.join(";");
-            await fetch(
-              `https://restcountries.eu/rest/v2/alpha?codes=${borders}`
-            )
-              .then((res) => res.json())
-              .then((borderResult) => {
-                if (borderResult.status === 404) return;
-                const borderCountries = borderResult
-                  .map((el) => el.name)
-                  .sort();
-                result[0].borders = borderCountries;
-              });
-
-            setCountry(result[0]);
-          });
-      } catch (e) {
-        console.log(e);
-      }
+    const fetch = async () => {
+      const data =
+        countries.find((el) => el.name === name) ||
+        (await getCountryData(name));
+      if (!data) history.push("/");
+      setCountry(data);
     };
-    getCountryData();
-  }, [setCountry, name, history]);
+    fetch();
+  }, [setCountry, name, history, countries]);
 
   return (
     <div className="page">
