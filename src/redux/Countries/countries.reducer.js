@@ -3,7 +3,7 @@ import countriesTypes from "./countries.types";
 const INITIAL_STATE = {
   countries: [],
   name: "",
-  region: "all",
+  region: "",
   isLoading: true,
 };
 

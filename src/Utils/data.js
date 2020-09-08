@@ -21,7 +21,7 @@ const getCountriesFullNames = async (borders) => {
     )
       .then((res) => res.json())
       .then((borders) => {
-        if (borders.status === 404) return;
+        if (borders.status === 400) return [];
         return borders.map((el) => el.name).sort();
       });
     return data;

@@ -3,7 +3,7 @@ import "./style.scss";
 import useDetectOutsideClick from "../../../hooks/useOutsideClick";
 import { useRef } from "react";
 import { ReactComponent as ArrowDown } from "../../../assets/arrow-down.svg";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setRegion } from "../../../redux/Countries/countries.actions";
 
 const regions = [
@@ -16,9 +16,14 @@ const regions = [
   "Polar",
 ];
 
+const mapState = ({ countries }) => ({
+  region: countries.region,
+});
+
 const DropDown = (props) => {
+  const { region } = useSelector(mapState);
   const [isOpen, setIsOpen] = useState();
-  const [active, setActive] = useState("Filter by region");
+  const [active, setActive] = useState(region || "Filter By Region");
   const optionsRef = useRef(null);
   const selectRef = useRef(null);
   const dispatch = useDispatch();

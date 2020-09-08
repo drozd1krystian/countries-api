@@ -1,10 +1,25 @@
 import React from "react";
 import "./style.scss";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Details = ({ country }) => {
+  const exitVariants = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+    },
+  };
+
   return (
-    <main className="details">
+    <motion.main
+      className="details"
+      initial="initial"
+      animate="animate"
+      variants={exitVariants}
+    >
       <div className="details__flag">
         <img src={country.flag} alt="country-flag" />
       </div>
@@ -69,7 +84,7 @@ const Details = ({ country }) => {
           {country.borders.length === 0 && <p className="field">No borders!</p>}
         </div>
       </div>
-    </main>
+    </motion.main>
   );
 };
 

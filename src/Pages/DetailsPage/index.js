@@ -18,9 +18,7 @@ const DetailsPage = (props) => {
 
   useEffect(() => {
     const fetch = async () => {
-      const data =
-        countries.find((el) => el.name === name) ||
-        (await getCountryData(name));
+      const data = await getCountryData(name);
       if (!data) history.push("/");
       setCountry(data);
     };

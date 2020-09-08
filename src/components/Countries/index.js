@@ -28,7 +28,6 @@ const Countries = (props) => {
     ];
     setItems(slides);
   };
-
   useEffect(() => {
     const generateSlides = () => {
       return isLoading

@@ -1,11 +1,29 @@
 import React from "react";
 import "./style.scss";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Country = ({ country }) => {
+  const exitVariants = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+    },
+    exit: {
+      opacity: 0,
+    },
+  };
   return (
     <Link to={country.name}>
-      <div className="country__wrapper">
+      <motion.div
+        className="country__wrapper"
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        variants={exitVariants}
+      >
         <div className="country">
           <div
             className="country__flag"
@@ -27,7 +45,7 @@ const Country = ({ country }) => {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </Link>
   );
 };

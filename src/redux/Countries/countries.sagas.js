@@ -6,17 +6,17 @@ export function* fetchData({ payload: filters }) {
   const { region, name } = filters;
   let query = "https://restcountries.eu/rest/v2/all";
 
-  if (region.toLowerCase() !== "all")
+  if (region.toLowerCase() !== "" && region.toLowerCase() !== "all")
     query = query.replace("all", `region/${region}`);
   try {
     const data = yield fetch(query)
       .then((res) => res.json())
-      .then((data) => {
+      .then((result) => {
         if (name !== "")
-          data = data.filter((el) =>
+          result = result.filter((el) =>
             el.name.toLowerCase().includes(name.toLowerCase())
           );
-        return data;
+        return result;
       });
     yield put(fetchDataSuccess(data));
   } catch (e) {
