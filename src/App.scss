@@ -6,6 +6,7 @@
   --text: #333;
   --shadow: #ccc;
   transition: all 0.3s ease;
+  background-color: var(--primary-color);
 }
 
 .dark__theme {
@@ -14,6 +15,7 @@
   --text: #fff;
   --shadow: #000;
   transition: all 0.3s ease;
+  background-color: var(--primary-color);
 }
 
 * {

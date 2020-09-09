@@ -4,28 +4,37 @@ import { motion } from "framer-motion";
 
 const MainLayout = (props) => {
   const { children } = props;
+
+  const changeTheme = () => {
+    let appClass = document.getElementById("app");
+    appClass.className =
+      appClass.className === "light__theme" ? "dark__theme" : "light__theme";
+  };
+
   const pageVariants = {
     in: {
       opacity: 1,
     },
     out: {
       opacity: 0,
+      x: `-100vw`,
+      transition: { ease: "easeInOut" },
     },
   };
 
   return (
-    <motion.div
-      className="main"
-      initial="initial"
-      animate="in"
-      exit="out"
-      variants={pageVariants}
-    >
-      <div className="container">
-        <Header />
+    <div className="container">
+      <Header mode={"Dark"} handleChange={changeTheme} />
+      <motion.div
+        className="main"
+        s
+        animate="in"
+        exit="out"
+        variants={pageVariants}
+      >
         {children}
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 };
 

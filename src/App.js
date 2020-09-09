@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AnimatePresence } from "framer-motion";
 
 const mapState = ({ countries }) => ({
-  countries: countries.countries,
+  isLoading: countries.isLoading,
   region: countries.region,
   name: countries.name,
 });
@@ -17,11 +17,13 @@ const mapState = ({ countries }) => ({
 const App = () => {
   const location = useLocation();
   const dispatch = useDispatch();
-  const { countries, region, name } = useSelector(mapState);
+  const { region, name, isLoading } = useSelector(mapState);
 
   useEffect(() => {
-    dispatch(fetchDataStart({ region, name }));
-  }, [dispatch, region, name, countries.length]);
+    if (isLoading) {
+      dispatch(fetchDataStart({ region, name }));
+    }
+  }, [dispatch, region, name, isLoading]);
 
   return (
     <div className="light__theme" id="app">

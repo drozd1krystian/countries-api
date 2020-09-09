@@ -6,6 +6,7 @@ import Country from "./Country";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useState } from "react";
 import SkeletonCard from "./Country/skeletonCard";
+import wordMap from "../../assets/world.svg";
 
 const mapState = ({ countries }) => ({
   countries: countries.countries,
@@ -43,13 +44,21 @@ const Countries = (props) => {
   }, [setItems, countries, isLoading]);
 
   return (
-    <InfiniteScroll
-      dataLength={items.length}
-      next={getNext}
-      hasMore={items.length < countries.length}
-    >
-      <div className="countries">{items}</div>
-    </InfiniteScroll>
+    <>
+      <InfiniteScroll
+        dataLength={items.length}
+        next={getNext}
+        hasMore={items.length < countries.length}
+      >
+        <div className="countries">{items}</div>
+      </InfiniteScroll>
+      {!isLoading && countries.length === 0 && (
+        <div className="empty__state">
+          <img src={wordMap} alt="word map" />
+          <h1 className="empty__header">No Countries Found</h1>
+        </div>
+      )}
+    </>
   );
 };
 

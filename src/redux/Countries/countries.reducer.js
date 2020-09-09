@@ -18,11 +18,13 @@ const countriesReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         region: action.payload,
+        isLoading: true,
       };
     case countriesTypes.SET_NAME:
       return {
         ...state,
         name: action.payload,
+        isLoading: true,
       };
     case countriesTypes.TOGGLE_LOADING:
       return {
