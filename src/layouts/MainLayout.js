@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import { motion } from "framer-motion";
+import ScrollButton from "../components/ScrollButton";
 
 const MainLayout = (props) => {
   const { children } = props;
@@ -34,6 +35,7 @@ const MainLayout = (props) => {
       >
         {children}
       </motion.div>
+      <ScrollButton />
     </div>
   );
 };
